@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qfedu.innovate.mapper.TQuestionMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.qfedu.innovate.entity.TQuestion">
+        <id column="qid" property="qid" />
+        <result column="qname" property="qname" />
+        <result column="qdesc" property="qdesc" />
+        <result column="sid" property="sid" />
+        <result column="lid" property="lid" />
+    </resultMap>
+
+</mapper>

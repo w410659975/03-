@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qfedu.innovate.mapper.TUserMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.qfedu.innovate.entity.TUser">
+        <id column="uid" property="uid" />
+        <result column="uname" property="uname" />
+        <result column="sex" property="sex" />
+        <result column="uaccount" property="uaccount" />
+        <result column="upassword" property="upassword" />
+        <result column="integral" property="integral" />
+        <result column="loginnum" property="loginnum" />
+        <result column="state" property="state" />
+        <result column="uimg" property="uimg" />
+    </resultMap>
+
+</mapper>
