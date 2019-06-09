@@ -2,6 +2,7 @@ package com.qfedu.innovate.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.qfedu.innovate.entity.TUser;
+import com.qfedu.innovate.vo.Bean;
 
 
 /**
@@ -14,4 +15,22 @@ import com.qfedu.innovate.entity.TUser;
  */
 public interface TUserService extends IService<TUser> {
 
+    public Bean login(String uaccount, String password);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
