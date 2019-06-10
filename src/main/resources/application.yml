@@ -2,10 +2,10 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     username: root
-    password: 111111
+    password: mypass
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/innovate?serverTimezone=UTC&characterEncoding=UTF8
+    url: jdbc:mysql://localhost:3306/java1901?serverTimezone=UTC&characterEncoding=UTF8
 mybatis-plus:
   mapper-locations: classpath*:/mapper/*.xml
 server:
-  port: 9191
+  port: 8080
