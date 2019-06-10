@@ -2,6 +2,7 @@ package com.qfedu.innovate.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.qfedu.innovate.entity.TMessage;
+import com.qfedu.innovate.vo.Bean;
 
 
 /**
@@ -14,4 +15,20 @@ import com.qfedu.innovate.entity.TMessage;
  */
 public interface TMessageService extends IService<TMessage> {
 
+    Bean addSingle(TMessage tMessage);
+
+    Bean selectByid(int uid);
+
+    Bean updateByTmessage(TMessage tMessage);
 }
+
+
+
+
+
+
+
+
+
+
+

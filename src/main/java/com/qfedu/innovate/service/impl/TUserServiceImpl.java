@@ -25,7 +25,6 @@ public class TUserServiceImpl extends ServiceImpl<TUserMapper, TUser> implements
 
     @Override
     public Bean login(String uaccount, String password) {
-//        List<TUser> list = new ArrayList<>();
         TUser user = tUserDao.login(uaccount);
         Bean result = new Bean();
         if (user != null) {
