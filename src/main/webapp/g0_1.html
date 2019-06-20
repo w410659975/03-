@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="Author" content="">
+<meta content=" " name="">
+<title></title>
+<link rel="stylesheet" type="text/css" href="css/css_whir.css"/>
+<script type="text/javascript" src="scripts/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/vue.min.js"></script>
+
+    <!--[if lt IE 9]>
+  <script type="text/javascript" src="scripts/html5shiv.v3.72.min.js"></script>
+<![endif]--><link type="text/css" href="css/calendar.css" rel="stylesheet" />
+<script type="text/javascript" src="scripts/calendar.js"></script>
+<script type="text/javascript" src="scripts/calendar-setup.js"></script>
+<script type="text/javascript" src="scripts/calendar-zh.js"></script>
+<script type="text/javascript">
+   var navID = "0";
+   var menuID="1";
+</script>
+<style type="text/css">
+.Banner{ background:url(uploadfiles/image/banner/Banner_information.jpg) no-repeat center;}
+
+</style>
+</head>
+
+<body>
+<!--top-->
+<header class="Toper">
+	<div class="Top">
+    	<div class="Logo">
+        	<a href="index.html"><img src="images/logo.jpg" width="211" height="67" /></a>
+        </div>
+        <div class="TopRight">
+        	<div class="RightTopBox">
+            	<ul>
+                	<li style="background:none;"><a href="#" class="regist">注册</a></li>
+                	<li><a href="g0_.html" class="login">登录</a></li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+            <div class="SearchBox">
+            	<a href="fb.html" class="issue"></a>
+            	<a class="search_btn" href="javascript:void('0');" onclick="return GoSearchUrl();"><em class="Texthide">搜索</em></a>
+                <div class="SelectBox SelectBox_Up">
+                   <span class="SelectText">请选择</span>
+                   <dl class="SelectList">
+                      <dt><a href="javascript:void(0)">香港</a></dt>
+                      <dt><a href="javascript:void(0)">北京</a></dt>
+                      <dt><a href="javascript:void(0)">广州</a></dt>
+                      <dt><a href="javascript:void(0)">上海</a></dt>
+                      <dt><a href="javascript:void(0)">杭州</a></dt>
+                      <dt><a href="javascript:void(0)">长沙</a></dt>
+                   </dl>
+                </div>
+                <div class="search_div"><input type="text" class="search_input" id="key" value="" onblur="if(this.value=='')this.value='';" onfocus="if(this.value=='')this.value='';" onkeydown="entersearch()"/></div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</header>
+<script type="text/javascript">
+$(".SelectBox").each(function(){    //同一个页面允许多次使用                      
+  $(this).find(".SelectText").click(function(){  //点击展开下拉菜单
+      var SelectListStatis = $(this).next(".SelectList").css("display");
+      if(SelectListStatis == "none"){    //判断下拉菜单是否展开
+            $(this).next(".SelectList").show();
+       }
+       else{  
+               $(this).next(".SelectList").hide();
+      }
+  });
+  //下拉菜单选项点击事件
+  $(this).find(".SelectList").children("dt").click(function(){
+       var Value = $(this).find("a").text();  //点击获取值
+      //赋值
+      $(this).parents(".SelectList").prev(".SelectText").text(Value)         
+      $(this).parents(".SelectList").hide();
+      $(this).mouseleave(function(){ $(this).find(".SelectList").hide(); });
+  });
+});
+</script>
+
+<nav class="Nav">
+   <nav class="MainNav">
+      <ul>
+         <li id="nav1"><a class="navA" href="index.html">社区首页</a></li>
+         <li id="nav2"><a class="navA" href="c01.html">产研合作</a></li>
+         <li id="nav3"><a class="navA" href="z02.html">众包平台</a></li>
+         <li id="nav4"><a class="navA" href="#">产品中心</a></li>
+         <li id="nav5"><a class="navA" href="q04.html">企业空间</a></li>
+         <li id="nav6"><a class="navA" href="q05.html">企业集群</a></li>
+         <li id="nav7"><a class="navA" href="c06.html">创新论坛</a></li>
+         <li id="nav8"><a class="navA" href="#">工程创新</a></li>
+         <li id="nav9"><a class="navA" href="#">技术博客</a></li>
+         <li id="nav10"><a class="navA" href="#">活动中心</a></li>
+         <li id="nav11"><a class="navA" href="#">帮助中心</a></li>
+         <div class="clear"></div>
+      </ul>
+      <div class="clear"></div>
+   </nav>
+</nav>
+<script type="text/javascript">
+$(".MainNav ul li:last").css({width:"90px",background:"none"});
+</script>
+
+<script type="text/javascript">
+   //导航选中
+    $("#nav" + navID).addClass("onnav");
+</script><!--top End-->
+
+<aside class="Banner"></aside>
+
+<section class="Contain Manage">
+	<div class="Information">
+   <aside class="SildeBar">
+   <!--SildeBar-->
+		<div class="Person">
+        <img src="uploadfiles/image/img2.jpg" width="110" height="97" />
+        <p><span>李先生</span>，你好</p>
+        <a href="javascript:void(0);">[更改头像]</a>
+    </div>
+    <nav class="MenuList">
+       <ul>
+          <li id="menu1"><a href="g0_1.html">信息完善</a></li>
+          <li id="menu2"><a href="g0_2.html">密码管理</a></li>
+          <li id="menu3"><a href="g0_3.html">马甲管理</a></li>
+          <li id="menu4"><a href="g0_4.html">企业管理</a></li>
+          <li id="menu5"><a href="">好友管理</a></li>
+          <li id="menu6"><a href="g0_5.html">相册管理</a></li>
+       </ul>
+    </nav>
+    <script type="text/javascript">
+    jQuery("#menu"+menuID).addClass("onmenu");
+    </script>
+    <!--SildeBar End-->
+   </aside>
+   <section class="MainContent1">
+      <div class="Content">
+         <article class="SinglePage">
+         <div class="Perfect">
+            <div class="PerfectTitle">
+            	<span>信息完善</span>
+            </div>
+            <div class="PerfectCont">
+            	<table cellpadding="0" cellspacing="0" border="0">
+                	<tr>
+                    	<td align="right" width="14%">真实姓名：</td>
+                    	<td align="left" width="36%"><input type="text" class="text" value="刘先生" /></td>
+                    	<td align="right" width="14%">身份证号：</td>
+                    	<td align="left" width="36%"><input type="text" class="text" value="" /></td>
+                    </tr>
+                	<tr>
+                    	<td align="right">性别：</td>
+                    	<td align="left"><input type="radio" name="sex" />男&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="sex" />女</td>
+                    	<td align="right">出生日期：</td>
+                    	<td align="left"><input type="text" class="text textdate" id="Birthday" name="Birthday" value="" readonly onclick="return showCalendar('Birthday', 'y-mm-dd');" /></td>
+                    </tr>
+                	<tr>
+                    	<td align="right">居住地：</td>
+                    	<td align="left" colspan="3"><input type="text" class="text textadress" value="" /></td>
+                    </tr>
+                	<tr>
+                    	<td align="right">联系方式：</td>
+                    	<td align="left"><input type="text" class="text" value="" /></td>
+                    	<td align="right"></td>
+                    	<td align="left"></td>
+                    </tr>
+                	<tr>
+                    	<td align="right">个人简介：</td>
+                    	<td align="left" colspan="3">
+                        	<textarea class="textarea"></textarea>
+                        </td>
+                    </tr>
+                	<tr>
+                    	<td align="right"></td>
+                    	<td align="left" colspan="3"><input type="button" class="btn" value="提 交" /></td>
+                    </tr>
+                </table>
+            </div>
+         </div>
+         </article>
+      </div>
+   </section>
+   <div class="clear"></div>
+   </div>
+   <!--link-->
+		<div class="HomeLink">
+        	<span>友情链接：</span><a href="#">科技部</a><em>|</em><a href="#">上海市科委</a><em>|</em><a href="#">上海科学院</a><em>|</em><a href="#">上海计算机软件技术开发中心</a><em>|</em><a href="#">上海集成电路技术与产品促进中心</a><em>|</em><a href="#">上海市纳米科技与产业发展促进中心</a><em>|</em><a href="#">上海产业技术研究院</a>
+        </div>
+    <!--link End-->
+</section>
+
+<!--bottom-->
+<footer class="Bottomer">
+	<footer class="Bottom">
+       <div class="Copyright">
+       	<p>Copyright © 2014  All Rights Reserved</p>
+        <p>沪ICP备00000000号 邮编： 电话：021-12345678</p>
+       </div>
+       <nav class="BottomLinks"> <!--友情链接-->
+          <a href="#">关于我们</a> <em>|</em><a href="#">广告联系</a> <em>|</em><a href="#">网站地图</a> <em>|</em><a href="#">后台管理</a> <em>|</em><a href="#">会员登录</a> <em>|</em><a href="#">会员注册</a> <em>|</em><a href="#">联系我们</a>
+       </nav>
+   </footer>
+</footer>
+
+<script type="text/javascript">
+//整站无图处理
+jQuery.each(jQuery("img"), function (i, n) { jQuery(n).error(function () { n.src = 'uploadfiles/nopic.jpg'; }); n.src = n.src; });
+</script><!--bottom End-->
+</body>
+</html>

@@ -1,56 +1,36 @@
-<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <script type="text/javascript" src="js/vue.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>登录</title>
+    <script type="text/javascript" src="js/jquery-1.12.2.min.js"></script>
 </head>
 <body>
-&lt;!&ndash;<script type="text/javascript">&ndash;&gt;
-    &lt;!&ndash;// 创建vue的对象&ndash;&gt;
-    &lt;!&ndash;var vue = new Vue({&ndash;&gt;
-        &lt;!&ndash;el:"#app", // 将vue对象和页面的指定id的元素关联&ndash;&gt;
-        &lt;!&ndash;data:{  // 元素中需要使用的数据，从data中来&ndash;&gt;
-            &lt;!&ndash;msg:"first vue"&ndash;&gt;
-        &lt;!&ndash;}&ndash;&gt;
+<form method="post" onsubmit="return false;">
+    账号<input type="text" name="uaccount" /><br />
+    密码<input type="password" name="password" /><br />
+    <input type="submit" value="登录" />
+    <input type="reset" value="重置"/>
+    <a href="zhuce.html">没有账号？点击注册</a><br>
+</form>
 
-    &lt;!&ndash;})&ndash;&gt;
-
-
-
-&lt;!&ndash;</script>&ndash;&gt;
-
-<template>
-    <div id="login">
-        <form>
-            <label for="uaccount"></label>
-
-        </form>
-    </div>
-</template>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<script type="text/javascript">
+    $("form").submit(function(){
+        $.ajax({
+            type:"get",
+            url:"login.do",
+            data:$("form").serialize(),
+            dataType:"json",
+            success:function(data){
+                if(data.code == 1){
+                    window.location.href = "g0_.html";
+                }else{
+                    alert(data.info);
+                }
+            }
+        })
+    })
+</script>
 </body>
-</html>-->
+</html>
+

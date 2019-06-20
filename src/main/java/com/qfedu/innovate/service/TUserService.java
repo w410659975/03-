@@ -16,6 +16,8 @@ import com.qfedu.innovate.vo.Bean;
 public interface TUserService extends IService<TUser> {
 
     public Bean login(String uaccount, String password);
+
+    public Bean addtUser(TUser tUser);
 }
 
 

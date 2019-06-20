@@ -1,0 +1,242 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="Author" content="">
+<meta content=" " name="">
+<title></title>
+<link rel="stylesheet" type="text/css" href="css/css_whir.css"/>
+<script type="text/javascript" src="scripts/jquery-1.9.1.min.js"></script>
+<!--[if lt IE 9]>
+  <script type="text/javascript" src="scripts/html5shiv.v3.72.min.js"></script>
+<![endif]--><script type="text/javascript" src="scripts/jquery.SuperSlide.js"></script>
+<script type="text/javascript">
+   var navID = "1";
+</script>
+
+</head>
+
+<body>
+<!--top-->
+<header class="Toper">
+	<div class="Top">
+    	<div class="Logo">
+        	<a href="index.html"><img src="images/logo.jpg" width="211" height="67" /></a>
+        </div>
+        <div class="TopRight">
+        	<div class="RightTopBox">
+            	<ul>
+                    <li><a href="g0_.html" class="login">个人信息</a></li>
+                	<li style="background:none;"><a href="#" class="regist">注册</a></li>
+                	<li><a href="login.html" class="login">登录</a></li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+            <div class="SearchBox">
+            	<a href="fb.html" class="issue"></a>
+            	<a class="search_btn" href="javascript:void('0');" onclick="return GoSearchUrl();"><em class="Texthide">搜索</em></a>
+                <div class="SelectBox SelectBox_Up">
+                   <span class="SelectText">请选择</span>
+                   <dl class="SelectList">
+                      <dt><a href="javascript:void(0)">香港</a></dt>
+                      <dt><a href="javascript:void(0)">北京</a></dt>
+                      <dt><a href="javascript:void(0)">广州</a></dt>
+                      <dt><a href="javascript:void(0)">上海</a></dt>
+                      <dt><a href="javascript:void(0)">杭州</a></dt>
+                      <dt><a href="javascript:void(0)">长沙</a></dt>
+                   </dl>
+                </div>
+                <div class="search_div"><input type="text" class="search_input" id="key" value="" onblur="if(this.value=='')this.value='';" onfocus="if(this.value=='')this.value='';" onkeydown="entersearch()"/></div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</header>
+<script type="text/javascript">
+$(".SelectBox").each(function(){    //同一个页面允许多次使用                      
+  $(this).find(".SelectText").click(function(){  //点击展开下拉菜单
+      var SelectListStatis = $(this).next(".SelectList").css("display");
+      if(SelectListStatis == "none"){    //判断下拉菜单是否展开
+            $(this).next(".SelectList").show();
+       }
+       else{  
+               $(this).next(".SelectList").hide();
+      }
+  });
+  //下拉菜单选项点击事件
+  $(this).find(".SelectList").children("dt").click(function(){
+       var Value = $(this).find("a").text();  //点击获取值
+      //赋值
+      $(this).parents(".SelectList").prev(".SelectText").text(Value)         
+      $(this).parents(".SelectList").hide();
+      $(this).mouseleave(function(){ $(this).find(".SelectList").hide(); });
+  });
+});
+</script>
+
+<nav class="Nav">
+   <nav class="MainNav">
+      <ul>
+         <li id="nav1"><a class="navA" href="index.html">社区首页</a></li>
+         <li id="nav2"><a class="navA" href="c01.html">产研合作</a></li>
+         <li id="nav3"><a class="navA" href="z02.html">众包平台</a></li>
+         <li id="nav4"><a class="navA" href="#">产品中心</a></li>
+         <li id="nav5"><a class="navA" href="q04.html">企业空间</a></li>
+         <li id="nav6"><a class="navA" href="q05.html">企业集群</a></li>
+         <li id="nav7"><a class="navA" href="c06.html">创新论坛</a></li>
+         <li id="nav8"><a class="navA" href="#">工程创新</a></li>
+         <li id="nav9"><a class="navA" href="#">技术博客</a></li>
+         <li id="nav10"><a class="navA" href="#">活动中心</a></li>
+         <li id="nav11"><a class="navA" href="#">帮助中心</a></li>
+         <div class="clear"></div>
+      </ul>
+      <div class="clear"></div>
+   </nav>
+</nav>
+<script type="text/javascript">
+$(".MainNav ul li:last").css({width:"90px",background:"none"});
+</script>
+
+<script type="text/javascript">
+   //导航选中
+    $("#nav" + navID).addClass("onnav");
+</script><!--top End-->
+
+<aside class="HomeBan">
+	<div class="BanList">
+    	<ul>
+        	<li style="background:url(uploadfiles/image/banner/HBanner.jpg) no-repeat center;"><a href="#" target="_blank"></a></li>
+        	<li style="background:url(uploadfiles/image/banner/HBanner.jpg) no-repeat center;"><a href="#" target="_blank"></a></li>
+        	<li style="background:url(uploadfiles/image/banner/HBanner.jpg) no-repeat center;"><a href="#" target="_blank"></a></li>
+        </ul>
+    </div>
+    <div class="TabBox">
+    	<div class="TabList">
+        	<ul>
+            	<li><span></span></li>
+            	<li><span></span></li>
+            	<li><span></span></li>
+                <div class="clear"></div>
+            </ul>
+        </div>
+    </div>
+</aside>
+<script type="text/javascript">
+	jQuery(".HomeBan").slide({mainCell:".BanList ul",titCell:".TabList ul li",effect:"fold",autoPlay:true,interTime:6000,delayTime:3500});
+</script>
+<section class="HomeContain"> 
+   <div class="HomeMain">
+   		<div class="BoxList">
+        	<ul class="BoxList1">
+            	<li class="FWWB"><a href="#">服务外包</a></li>
+            	<li class="CYTZ"><a href="#">创业投资</a></li>
+            	<li class="GCCX"><a href="#">工程创新</a></li>
+            	<li class="CYHZ"><a href="#">产研合作</a></li>
+            	<li class="QYKJ"><a href="#">企业空间</a></li>
+            </ul>
+        	<ul class="BoxList2">
+            	<li></li>
+            	<li class="GYY"><a href="#">工业云</a></li>
+            	<li class="ZHYQ"><a href="#">智慧园区</a></li>
+            	<li class="GYSJ"><a href="#">工业设计</a></li>
+            	<li class="JSHZ"><a href="#">技术合作</a></li>
+            </ul>
+        	<ul class="BoxList3">
+            	<li></li>
+            	<li></li>
+            	<li class="HYHD"><a href="#">会议活动</a></li>
+            	<li class="LTBK"><a href="#">论坛博客</a></li>
+            	<li class="GYWM"><a href="#">关于我们</a></li>
+            </ul>
+        </div>
+        <div class="HomeNews">
+        	<div class="HomeNewsList">
+            	<div class="NewsTab">
+                	<ul>
+                    	<li><a href="javascript:void(0);">活 动</a></li>
+                    	<li><a href="javascript:void(0);">集 群</a></li>
+                    </ul>
+                    <div class="NewsBtn">
+                    	<a href="javascript:void(0);" class="prev"></a>
+                        <a href="javascript:void(0);" class="next"></a>
+                    </div>
+                </div>
+                <div class="HomeNewsCont">
+                	<ul>
+                    	<li>
+                        	<dl>
+                            	<dt>
+                                	<div class="HomeNewsinfo">
+                                    	<span><a href="#">上海轨道交通大数据战略研讨会</a></span>
+                                        <p>轨道交通作为可提供资源集约利用、环境舒适、节能减排、安全快捷的大容量运输服务，已成为解决特大型城市....<a href="#" class="more">[查看详情]</a></p>
+                                    </div>
+                                    <div class="HomeNewsDate">
+                                    	<span class="day">22</span>
+                                        <span class="time">2015-01</span>
+                                    </div>
+                                    <div class="clear"></div>
+                                </dt>
+                                <dd><span class="datetime">2014-10-25</span><a href="#">创新社区沙龙--食品安全云服务<span class="hot"><img src="images/bghot.jpg" /></span></a></dd>
+                                <dd><span class="datetime">2014-10-25</span><a href="#">2014数据中国产业创新峰会暨最具投资价值排行榜<span class="hot"></span></a></dd>
+                                <dd><span class="datetime">2014-10-25</span><a href="#">上海轨道交通大数据战略研讨会<span class="hot"><img src="images/bghot.jpg" /></span></a></dd>
+                                <dd><span class="datetime">2014-10-25</span><a href="#">华东师范大学第一届数据科学与工程暑期学校招生简章<span class="hot"><img src="images/bghot.jpg" /></span></a></dd>
+                                <dd><span class="datetime">2014-10-25</span><a href="#">中法高科技中小企业产学研研讨会（智慧城市和大数据）<span class="hot"></span></a></dd>
+                            </dl>
+                        </li>
+                    	<li>
+                        	<dl>
+                            	<dt>
+                                	<div class="HomeNewsinfo">
+                                    	<span><a href="#">上海轨道交通大数据战略研讨会</a></span>
+                                        <p>轨道交通作为可提供资源集约利用、环境舒适、节能减排、安全快捷的大容量运输服务，已成为解决特大型城市....<a href="#" class="more">[查看详情]</a></p>
+                                    </div>
+                                    <div class="HomeNewsDate">
+                                    	<span class="day">22</span>
+                                        <span class="time">2015-01</span>
+                                    </div>
+                                    <div class="clear"></div>
+                                </dt>
+                                <dd><span class="datetime">2014-10-25</span><a href="#">创新社区沙龙--食品安全云服务<span class="hot"><img src="images/bghot.jpg" /></span></a></dd>
+                                <dd><span class="datetime">2014-10-25</span><a href="#">2014数据中国产业创新峰会暨最具投资价值排行榜<span class="hot"></span></a></dd>
+                                <dd><span class="datetime">2014-10-25</span><a href="#">上海轨道交通大数据战略研讨会<span class="hot"><img src="images/bghot.jpg" /></span></a></dd>
+                                <dd><span class="datetime">2014-10-25</span><a href="#">华东师范大学第一届数据科学与工程暑期学校招生简章<span class="hot"><img src="images/bghot.jpg" /></span></a></dd>
+                                <dd><span class="datetime">2014-10-25</span><a href="#">中法高科技中小企业产学研研讨会（智慧城市和大数据）<span class="hot"></span></a></dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <!--link-->
+			<div class="HomeLink">
+        	<span>友情链接：</span><a href="#">科技部</a><em>|</em><a href="#">上海市科委</a><em>|</em><a href="#">上海科学院</a><em>|</em><a href="#">上海计算机软件技术开发中心</a><em>|</em><a href="#">上海集成电路技术与产品促进中心</a><em>|</em><a href="#">上海市纳米科技与产业发展促进中心</a><em>|</em><a href="#">上海产业技术研究院</a>
+        </div>
+        <!--link End-->
+   </div>
+<script type="text/javascript">
+	jQuery(".HomeNewsList").slide({mainCell:".HomeNewsCont ul",titCell:".NewsTab ul li",prevCell:".prev",nextCell:".next",effect:"left"});
+</script>
+</section>
+
+<!--bottom-->
+<footer class="Bottomer">
+	<footer class="Bottom">
+       <div class="Copyright">
+       	<p>Copyright © 2014  All Rights Reserved</p>
+        <p>沪ICP备00000000号 邮编： 电话：021-12345678</p>
+       </div>
+       <nav class="BottomLinks"> <!--友情链接-->
+          <a href="#">关于我们</a> <em>|</em><a href="#">广告联系</a> <em>|</em><a href="#">网站地图</a> <em>|</em><a href="#">后台管理</a> <em>|</em><a href="#">会员登录</a> <em>|</em><a href="#">会员注册</a> <em>|</em><a href="#">联系我们</a>
+       </nav>
+   </footer>
+</footer>
+
+<script type="text/javascript">
+//整站无图处理
+jQuery.each(jQuery("img"), function (i, n) { jQuery(n).error(function () { n.src = 'uploadfiles/nopic.jpg'; }); n.src = n.src; });
+</script><!--bottom End-->
+</body>
+</html>

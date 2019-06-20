@@ -26,28 +26,19 @@ public class TUserServiceImpl extends ServiceImpl<TUserMapper, TUser> implements
     @Override
     public Bean login(String uaccount, String password) {
         TUser user = tUserDao.login(uaccount);
-        Bean result = new Bean();
-        if (user != null) {
-            result.setCode(0);
-            result.setMsg("登录成功");
-            result.setData(0);
-        } else {
-            result.setCode(1);
-            result.setMsg("登录失败");
-        }
-
-        return result;
+            if(user.getUpassword().equals(password) && user.getUaccount().equals(uaccount)){
+                return Bean.setOK("OK","密码正确");
+            }else {
+                return Bean.setError();
+            }
     }
 
+    @Override
+    public Bean addtUser(TUser tUser) {
+        if (tUserDao.insert(tUser) > 0) {
+            return Bean.setOK();
+        } else {
+            return Bean.setError();
+        }
+    }
 }
-
-
-
-
-
-
-
-
-
-
-

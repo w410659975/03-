@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <script type="text/javascript" src="js/jquery-1.12.2.min.js"></script>
+
+
+</head>
+<body>
+<form method="post" onsubmit="return false;">
+    <div>
+        账号<input type="text" name="uaccount" /><br />
+        密码<input type="password" name="upassword" /><br />
+        姓名<input type="text" name="uname" /><br />
+        <tr>
+            <th>性别</th>
+            <td>
+                <input type="radio" name="sex" value="男" />男
+                <input type="radio" name="sex" value="女" />女
+            </td>
+        </tr>
+        <input type="submit" value="注册" />
+        <input type="reset" value="重置"/>
+</div>
+</form>
+
+<script type="text/javascript">
+    $("form").submit(function(){
+        $.ajax({
+            type:"post",
+            url:"addUser.do",
+            data:$("form").serialize(),
+            dataType:"json",
+            success:function(data){
+                if(data.code == 1){
+                    window.location.href = "login.html";
+                }else{
+                    alert(data.info);
+                }
+            }
+        })
+    })
+</script>
+</body>
+</html>
+
