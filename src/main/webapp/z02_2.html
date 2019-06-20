@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="Author" content="">
+<meta content=" " name="">
+<title></title>
+<link rel="stylesheet" type="text/css" href="css/css_whir.css"/>
+    <script type="text/javascript" src="js/vue.min.js"></script>
+    <script type="text/javascript" src="js/vue-resource-1.3.4.js"></script>
+    <script type="text/javascript" src="js/jquery-1.12.2.min.js"></script>
+
+
+<!--[if lt IE 9]>
+  <script type="text/javascript" src="scripts/html5shiv.v3.72.min.js"></script>
+<![endif]--><script type="text/javascript">
+   var navID = "3";
+</script>
+<style type="text/css">
+.Banner{ background:url(uploadfiles/image/banner/Banner_platform.jpg) no-repeat center;}
+
+</style>
+</head>
+
+<body>
+<!--top-->
+<header class="Toper">
+	<div class="Top">
+    	<div class="Logo">
+        	<a href="index.html"><img src="images/logo.jpg" width="211" height="67" /></a>
+        </div>
+        <div class="TopRight">
+        	<div class="RightTopBox">
+            	<ul>
+                	<li style="background:none;"><a href="#" class="regist">注册</a></li>
+                	<li><a href="g0_.html" class="login">登录</a></li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+            <div class="SearchBox">
+            	<a href="fb.html" class="issue"></a>
+            	<a class="search_btn" href="javascript:void('0');" onclick="return GoSearchUrl();"><em class="Texthide">搜索</em></a>
+                <div class="SelectBox SelectBox_Up">
+                   <span class="SelectText">请选择</span>
+                   <dl class="SelectList">
+                      <dt><a href="javascript:void(0)">香港</a></dt>
+                      <dt><a href="javascript:void(0)">北京</a></dt>
+                      <dt><a href="javascript:void(0)">广州</a></dt>
+                      <dt><a href="javascript:void(0)">上海</a></dt>
+                      <dt><a href="javascript:void(0)">杭州</a></dt>
+                      <dt><a href="javascript:void(0)">长沙</a></dt>
+                   </dl>
+                </div>
+                <div class="search_div"><input type="text" class="search_input" id="key" value="" onblur="if(this.value=='')this.value='';" onfocus="if(this.value=='')this.value='';" onkeydown="entersearch()"/></div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</header>
+<script type="text/javascript">
+$(".SelectBox").each(function(){    //同一个页面允许多次使用                      
+  $(this).find(".SelectText").click(function(){  //点击展开下拉菜单
+      var SelectListStatis = $(this).next(".SelectList").css("display");
+      if(SelectListStatis == "none"){    //判断下拉菜单是否展开
+            $(this).next(".SelectList").show();
+       }
+       else{  
+               $(this).next(".SelectList").hide();
+      }
+  });
+  //下拉菜单选项点击事件
+  $(this).find(".SelectList").children("dt").click(function(){
+       var Value = $(this).find("a").text();  //点击获取值
+      //赋值
+      $(this).parents(".SelectList").prev(".SelectText").text(Value)         
+      $(this).parents(".SelectList").hide();
+      $(this).mouseleave(function(){ $(this).find(".SelectList").hide(); });
+  });
+});
+</script>
+
+<nav class="Nav">
+   <nav class="MainNav">
+      <ul>
+         <li id="nav1"><a class="navA" href="index.html">社区首页</a></li>
+         <li id="nav2"><a class="navA" href="c01.html">产研合作</a></li>
+         <li id="nav3"><a class="navA" href="z02.html">众包平台</a></li>
+         <li id="nav4"><a class="navA" href="#">产品中心</a></li>
+         <li id="nav5"><a class="navA" href="q04.html">企业空间</a></li>
+         <li id="nav6"><a class="navA" href="q05.html">企业集群</a></li>
+         <li id="nav7"><a class="navA" href="c06.html">创新论坛</a></li>
+         <li id="nav8"><a class="navA" href="#">工程创新</a></li>
+         <li id="nav9"><a class="navA" href="#">技术博客</a></li>
+         <li id="nav10"><a class="navA" href="#">活动中心</a></li>
+         <li id="nav11"><a class="navA" href="#">帮助中心</a></li>
+         <div class="clear"></div>
+      </ul>
+      <div class="clear"></div>
+   </nav>
+</nav>
+<script type="text/javascript">
+$(".MainNav ul li:last").css({width:"90px",background:"none"});
+</script>
+
+<script type="text/javascript">
+   //导航选中
+    $("#nav" + navID).addClass("onnav");
+</script><!--top End-->
+
+<aside class="Banner">
+</aside>
+
+<section class="Contain">
+   <section class="MainContent">
+      <div class="Content">
+         <div class="Crowdsourcing" id="baoId">
+         	<div class="ThemeName">
+            	众包主题:  <span>{{Unit.unitname}}</span>
+            </div>
+         	<div class="ThemeName">
+            	发标单位:  <span>{{Unit.fname}}</span>
+            </div>
+         	<!--<div class="ThemeName">-->
+            	<!--一级分类:  <span></span>-->
+            <!--</div>-->
+         	<!--<div class="ThemeName">-->
+            	<!--二级分类:  <span></span>-->
+            <!--</div>-->
+
+             <div class="ThemeName">
+            	发布日期:  <span>{{Unit.fputtime}} </span>
+            </div>
+         	<div class="ThemeName">
+            	联系方式:  <span>{{Unit.phone}}</span>
+            </div>
+         	<div class="ThemeName">
+            	详情:  任务开始时间:  <span>{{Unit.starttime}}</span> 任务截止时间：<span>{{Unit.endtime}}</span>
+            </div>
+         	<div class="ThemeName">
+            	<span>任务悬赏金额：1800元</span>
+            </div>
+            <div class="ThemeCont">
+            	<p class="ThemeTitle">影视公司 LOGO设计征集方案</p>
+                <p>为更好体现公司形象，特向广大优秀设计师征集LOGO设计方案。我公司多次与“任务中国”合作，具有良好的信誉。</p>
+                <p style="color:#003671;">一、任务名称 </p>
+                <p>北京艺德环球文化艺术艺术有限公司 “艺德环球” LOGO设计 </p>
+                <br />
+                <p style="color:#003671;">二、公司简介  </p>
+                <p>北京艺德环球文化艺术有限公司98年始创至今，十年树木早已经发展成为影视制作、版权交易与新媒体纵深合作的大型影视平台。不但拥有数万小时的节目储备，更拥有完善的海内外版权交易渠道；资深的策划制作团队确保了产品的品质；而传统媒体与新媒体交互构建起庞大的脉络合作关系，更为公司的发展奠定了未来蓝图。</p>
+                <br />
+                <p>公司十年来累计交易50000余小时节目版权，类别更是涵盖了电视剧、电影、专题片、动画片等。与此同时，公司策划制作的众多的电视剧：皮皮名著改编的《渴望激情》、池莉名著改编的《幸福来了你就喊》、张恨水名著改编的《啼笑因缘》、金庸名著改编的《侠客行》和《连城诀》、古龙名著改编的《浣花洗剑录》，以及原创神话系列喜剧之《欢天喜地七仙女》、《天地姻缘七仙女》等，更是为公司带来3亿余元的业绩。公司还致力于原创品牌衍生品的创新，“七仙女”系列漫画和卡通片受到粉丝的追捧。在创造巨大商业产值的同时，也为艺德环球在业内外树立了良好的口碑。 
+如今，公司以版权交易为核心，以新媒体为依托，开创和打造全新的产业理念，多元化与立体性并存, 引领影视文化的新潮流。 </p>
+                <br />
+                <p>如今，公司以版权交易为核心，以新媒体为依托，开创和打造全新的产业理念，多元化与立体性并存, 引领影视文化的新潮流。</p>
+                <p style="color:#003671;">三、征集要求说明  </p>
+                <p>1、“艺德环球”是一家影视制作，版权交易公司，在日常应用中，一般多以LOGO图型+标注“艺德环球”中文字为主，设计的LOGO释义应以“艺德环球”为核心概念。</p>
+                <p>2、设计的LOGO要求突出影视产业特征，作品应构思精巧，简洁明快，色彩协调，健康向上。有独特的创意，易记、易识别、易制作，有强烈的视觉冲击力和直观的整体美感，有较强的思想性、艺术性、感染力和时代感，并应提供有多种配色的方案供选择。 </p>
+                <p>3、LOGO设计应含基础系统设计，有简单运用，包括名片、文件袋、信笺及其它需要公司视觉符号的场所等。</p>
+                <p>4、LOGO设计最终确定画面应具有动态可延展性，既该LOGO具有最终可成为电影片头动态LOGO的可能性，并出具该动态LOGO的文字说明。</p>
+                <br />
+                <p style="color:#003671;">四、作品要求 </p>
+                <p>1、设计的LOGO不得违反《中华人民共和国商标法》的有关规定，且LOGO尚未被注册。</p>
+                <p>2、作品应有核心设计方案、设计理念说明。</p>
+                <p>3、以电子文稿形式提交，图稿需存储为JPG、TIF或PSD位图格式及AI或CDR矢量图格式。图片分辨率应在300dpi以上。</p>
+                <p style="color:#003671;">五、联系方式</p>
+                <p>联系人：单小姐；电话：010-65125736；QQ：53361374；（加者请注明“任务中国设计师”）；电子邮件：53361374@qq.com </p>
+                <p style="color:#003671;">六、知识产权说明</p>
+                <p>1、所设计的作品应为原创，LOGO未在国家商标局注册过，并为第一次发布，未侵犯他人著作权；如有侵犯他人著作权，由设计者承担所有法律责任。</p>
+                <p>2、如中标，设计方必须提供以上要求设计作品完整的方案，包括各种矢量图形源文件和所用到的字体，以方便进行修改完善和印刷。</p>
+                <p>3、中标的设计作品，我方支付设计费后，即拥有该作品知识产权，包括著作权、使用权和发布权等，有权对设计作品进行修改、组合和应用。</p>
+                <p>4、设计作品一经采用，所有权、修改权和使用权均归我方所有，设计者不得在其他任何地方使用该设计作品，包括并不限于著作权、使用权、发布权以及对设计作品进行修改、组合、应用等权利。</p>
+                <p>5、征集结果公布后，未采用的作品即可自行处理。</p>
+                <p>6、参加此设计任务者被视为同意以上所有声明</p>
+                <p>7、本次征集活动最终解释权归本公司所有。</p><br />
+            </div>
+         </div>
+         <!--link-->
+			<div class="HomeLink">
+        	<span>友情链接：</span><a href="#">科技部</a><em>|</em><a href="#">上海市科委</a><em>|</em><a href="#">上海科学院</a><em>|</em><a href="#">上海计算机软件技术开发中心</a><em>|</em><a href="#">上海集成电路技术与产品促进中心</a><em>|</em><a href="#">上海市纳米科技与产业发展促进中心</a><em>|</em><a href="#">上海产业技术研究院</a>
+        </div>
+        <!--link End-->
+      </div>
+   </section>
+   <div class="clear"></div>
+</section>
+<script type="text/javascript">
+</script>
+
+
+<!--bottom-->
+<footer class="Bottomer">
+	<footer class="Bottom">
+       <div class="Copyright">
+       	<p>Copyright © 2014  All Rights Reserved</p>
+        <p>沪ICP备00000000号 邮编： 电话：021-12345678</p>
+       </div>
+       <nav class="BottomLinks"> <!--友情链接-->
+          <a href="#">关于我们</a> <em>|</em><a href="#">广告联系</a> <em>|</em><a href="#">网站地图</a> <em>|</em><a href="#">后台管理</a> <em>|</em><a href="#">会员登录</a> <em>|</em><a href="#">会员注册</a> <em>|</em><a href="#">联系我们</a>
+       </nav>
+   </footer>
+</footer>
+<script type="text/javascript">
+    var  vue = new Vue({
+        el:"#baoId",
+        data:{
+            Unit:{
+
+            }
+        },
+        mounted:function(){
+            this.kankan()
+        },
+        methods: {
+            kankan: function () {
+                var _this = this;
+                _this.Unit = {}
+                $.ajax({
+                    type: "get",
+                    url: "tUnit/find2.do",
+                    success: function (data) {
+                        _this.Unit = data.data;
+                    }
+                })
+            }
+        }
+    })
+</script>
+<script type="text/javascript">
+//整站无图处理
+jQuery.each(jQuery("img"), function (i, n) { jQuery(n).error(function () { n.src = 'uploadfiles/nopic.jpg'; }); n.src = n.src; });
+</script><!--bottom End-->
+</body>
+</html>
